@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Generics\" />
     <Folder Include="Interfaces\ICategoria\" />
     <Folder Include="Interfaces\IDespesa\" />
     <Folder Include="Interfaces\InterfaceServicos\" />
