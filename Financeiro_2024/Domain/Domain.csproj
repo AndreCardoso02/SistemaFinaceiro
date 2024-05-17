@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\ICategoria\" />
-    <Folder Include="Interfaces\IDespesa\" />
     <Folder Include="Interfaces\InterfaceServicos\" />
-    <Folder Include="Interfaces\ISistemaFinanceiro\" />
-    <Folder Include="Interfaces\IUsuarioSistemaFinanceiro\" />
   </ItemGroup>
 
 </Project>
