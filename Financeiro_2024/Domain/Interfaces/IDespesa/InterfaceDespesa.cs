@@ -10,5 +10,7 @@ namespace Domain.Interfaces.IDespesa
 {
     public interface InterfaceDespesa : InterfaceGeneric<Despesa>
     {
+        Task<IList<Despesa>> ListarDispesasUsuario(string emailUsuario);
+        Task<IList<Despesa>> ListarDispesasNaoPagasUsuario(string emailUsuario);
     }
 }
