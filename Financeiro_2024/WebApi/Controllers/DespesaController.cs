@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces.IDespesa;
+﻿using Domain.Interfaces.ICategoria;
+using Domain.Interfaces.IDespesa;
 using Domain.Interfaces.InterfaceServicos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -20,5 +21,18 @@ namespace WebApi.Controllers
             _IDespesaServico = iDespesaServico;
         }
 
+        [HttpGet("/api/ListarDispesasUsuario")]
+        [Produces("application/json")]
+        public async Task<object> ListarDispesasUsuario(string emailUsuario)
+        {
+            return await _InterfaceDespesa.ListarDispesasUsuario(emailUsuario);
+        }
+
+        [HttpGet("/api/ListarDispesasNaoPagasUsuario")]
+        [Produces("application/json")]
+        public async Task<object> ListarDispesasNaoPagasUsuario(string emailUsuario)
+        {
+            return await _InterfaceDespesa.ListarDispesasNaoPagasUsuario(emailUsuario);
+        }
     }
 }
