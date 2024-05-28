@@ -59,5 +59,21 @@ namespace WebApi.Controllers
         {
             return await _InterfaceDespesa.GetEntityById(id);
         }
+
+        [HttpDelete("/api/RemoverDespesa")]
+        [Produces("application/json")]
+        public async Task<object> RemoverDespesa(int id)
+        {
+            try
+            {
+                var despesa = await _InterfaceDespesa.GetEntityById(id);
+                await _InterfaceDespesa.Delete(despesa);
+                return true.ToString();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
