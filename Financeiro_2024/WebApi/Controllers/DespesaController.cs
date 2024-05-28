@@ -52,5 +52,12 @@ namespace WebApi.Controllers
             await _IDespesaServico.ActualizarDespesa(despesa);
             return Task.FromResult(despesa);
         }
+
+        [HttpGet("/api/ObterDespesa")]
+        [Produces("application/json")]
+        public async Task<object> ObterDespesa(int id)
+        {
+            return await _InterfaceDespesa.GetEntityById(id);
+        }
     }
 }
