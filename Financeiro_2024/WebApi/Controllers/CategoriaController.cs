@@ -30,7 +30,7 @@ namespace WebApi.Controllers
         public async Task<object> AdicionarCategoria(Categoria categoria)
         {
             await _ICategoriaServico.AdicionarCategoria(categoria);
-            return Ok(categoria);
+            return Task.FromResult(categoria);
         }
 
         [HttpPut("/api/ActualizarCategoria")]
@@ -38,7 +38,7 @@ namespace WebApi.Controllers
         public async Task<object> ActualizarCategoria(Categoria categoria)
         {
             await _ICategoriaServico.ActualizarCategoria(categoria);
-            return Ok(categoria);
+            return Task.FromResult(categoria);
         }
 
         [HttpGet("/api/ObterCategoria")]
@@ -56,11 +56,11 @@ namespace WebApi.Controllers
             {
                 var categoria = await _InterfaceCategoria.GetEntityById(id);
                 await _InterfaceCategoria.Delete(categoria);
-                return Ok(true);
+                return true.ToString();
             }
             catch (Exception)
             {
-                return Ok(false);
+                return false;
             }
         }
     }
